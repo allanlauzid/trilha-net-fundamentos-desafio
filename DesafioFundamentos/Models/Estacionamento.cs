@@ -21,7 +21,7 @@ namespace DesafioFundamentos.Models
             {
             Console.WriteLine("\nDigite a placa do veículo para estacionar:");
             placa = Console.ReadLine();
-            } while (string.IsNullOrWhiteSpace(placa));
+            } while (string.IsNullOrWhiteSpace(placa)); //*ALLAN*: IsNullOrWhiteSpace() identifica se a variável 'placa' está em branco ou nula
 
             veiculos.Add(placa.ToUpper());
         }
@@ -62,10 +62,10 @@ namespace DesafioFundamentos.Models
             // Verifica se há veículos no estacionamento
             if (veiculos.Any())
             {
-                Console.WriteLine("\nOs veículos estacionados são:");
+                Console.WriteLine("\nExistem " +veiculos.Count +" veículos estacionados." +"\nOs veículos estacionados são:"); //*ALLAN*: veiculos.Count mostram a quantidade de itens na lista 'veiculos'
                 // TODO: Realizar um laço de repetição, exibindo os veículos estacionados
                 // *IMPLEMENTE AQUI*
-                foreach (var veiculo in veiculos)
+                foreach (var veiculo in veiculos) //*ALLAN*: foreach permite listar os veículos que estão na lista 'veiculos'  de maneira mais prática, sem usar o for
                 {
                     Console.WriteLine(veiculo);
                 }
