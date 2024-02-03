@@ -7,7 +7,13 @@ decimal precoInicial = 0;
 decimal precoPorHora = 0;
 
 Console.Clear(); //*ALLAN*: inserido para limpar o Console caso esteja executando o programa mais de uma vez
-Console.WriteLine("Seja bem vindo ao sistema de estacionamento!\nDigite o preço inicial do Estacionamento:");
+Console.Write("                  _______ \n"
++"                 //  ||\\ \\ \n"
++"           _____//___||_\\ \\___ \n"
++"           )  _          _    \\ \n"
++"           |_/ \\________/ \\___| \n"
++"_____________\\_/________\\_/_____________________ \n");
+Console.WriteLine("## Seja bem vindo ao sistema de estacionamento! ##\nDigite o preço inicial do Estacionamento:");
 precoInicial = Convert.ToDecimal(Console.ReadLine());
 
 Console.WriteLine("Digite o preço por hora de estadis no Estacionamento:");
