@@ -21,9 +21,16 @@ namespace DesafioFundamentos.Models
             {
             Console.WriteLine("\nDigite a placa do veículo para estacionar:");
             placa = Console.ReadLine();
+            placa = placa.ToUpper();
             } while (string.IsNullOrWhiteSpace(placa)); //*ALLAN*: IsNullOrWhiteSpace() identifica se a variável 'placa' está em branco ou nula
-
-            veiculos.Add(placa.ToUpper());
+            while (veiculos.Contains(placa)) //*ALLAN*: verifica se a placa já foi inserida
+            {
+                Console.WriteLine($"O veículo de placa '{placa}' já está estacionado.");
+                Console.WriteLine("\nDigite a placa do veículo para estacionar:");
+                placa = Console.ReadLine();
+            }
+            veiculos.Add(placa);
+            Console.WriteLine($"Veículo de placa '{placa}' adicionado com sucesso");
         }
 
         public void RemoverVeiculo()
@@ -34,7 +41,7 @@ namespace DesafioFundamentos.Models
             // Pedir para o usuário digitar a placa e armazenar na variável placa
             // *IMPLEMENTE AQUI*
             string placa = Console.ReadLine();
-
+            placa = placa.ToUpper();
             // Verifica se o veículo existe
             if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
             {
@@ -48,8 +55,8 @@ namespace DesafioFundamentos.Models
 
                 // TODO: Remover a placa digitada da lista de veículos
                 // *IMPLEMENTE AQUI*
-                veiculos.Remove(placa.ToUpper());
-                Console.WriteLine($"\nO veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
+                veiculos.Remove(placa);
+                Console.WriteLine($"\nO veículo {placa} foi removido com sucesso\nValor total do Estacionamento: R$ {valorTotal}");
             }
             else
             {
@@ -62,12 +69,14 @@ namespace DesafioFundamentos.Models
             // Verifica se há veículos no estacionamento
             if (veiculos.Any())
             {
-                Console.WriteLine("\nExistem " +veiculos.Count +" veículos estacionados." +"\nOs veículos estacionados são:"); //*ALLAN*: veiculos.Count mostram a quantidade de itens na lista 'veiculos'
+                Console.WriteLine("\nExistem " +veiculos.Count +" veículos estacionados." +"\nAs placas dos veículos estacionados são:"); //*ALLAN*: veiculos.Count mostram a quantidade de itens na lista 'veiculos'
                 // TODO: Realizar um laço de repetição, exibindo os veículos estacionados
                 // *IMPLEMENTE AQUI*
-                foreach (var veiculo in veiculos) //*ALLAN*: foreach permite listar os veículos que estão na lista 'veiculos'  de maneira mais prática, sem usar o for
+                int contador = 1; //*ALLAN*: contador para listar quantidade de veículos
+                foreach (var veiculo in veiculos)//*ALLAN*: foreach permite listar os veículos que estão na lista 'veiculos'  de maneira mais prática, sem usar o for
                 {
-                    Console.WriteLine(veiculo);
+                    Console.WriteLine(contador + ". " + veiculo);
+                    contador++;
                 }
             }
             else
