@@ -53,11 +53,16 @@ namespace DesafioFundamentos.Models
                 // *IMPLEMENTE AQUI*
                 string entrada = Console.ReadLine();
                 int horas;
-                bool valido = int.TryParse(entrada, out horas); //*ALLAN*: validando se entrada é um número e não um texto
-                
+                bool valido = int.TryParse(entrada, out horas); //*ALLAN*: validando se entrada é um número
+                while (horas < 0)
+                {
+                    Console.WriteLine("## Digite um número não negativo ##");
+                    entrada = Console.ReadLine();
+                    valido = int.TryParse(entrada, out horas);
+                }
                 while(!valido)
                 {
-                    Console.WriteLine("Entrada inválida\nDigite um número inteiro");
+                    Console.WriteLine("## Entrada inválida ##\nDigite um número inteiro");
                     entrada = Console.ReadLine();
                     valido = int.TryParse(entrada, out horas);
                     Console.WriteLine("\nDigite a quantidade de horas que o veículo permaneceu estacionado:");
