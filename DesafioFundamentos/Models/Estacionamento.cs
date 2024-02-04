@@ -53,7 +53,7 @@ namespace DesafioFundamentos.Models
                 // *IMPLEMENTE AQUI*
                 string entrada = Console.ReadLine();
                 int horas;
-                bool valido = int.TryParse(entrada, out horas);
+                bool valido = int.TryParse(entrada, out horas); //*ALLAN*: validando se entrada é um número e não um texto
                 
                 while(!valido)
                 {
