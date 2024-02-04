@@ -54,7 +54,7 @@ namespace DesafioFundamentos.Models
                 string entrada = Console.ReadLine();
                 int horas;
                 bool valido = int.TryParse(entrada, out horas); //*ALLAN*: validando se entrada é um número
-                while (horas < 0)
+                while (horas < 0) //*ALLAN*: validando se o número digitado não é negativo
                 {
                     Console.WriteLine("## Digite um número não negativo ##");
                     entrada = Console.ReadLine();
