@@ -16,7 +16,7 @@ Console.Write("                  _______ \n"
 Console.WriteLine("## Seja bem vindo ao sistema de estacionamento! ##\nDigite o preço inicial do Estacionamento:");
 precoInicial = Convert.ToDecimal(Console.ReadLine());
 
-Console.WriteLine("Digite o preço por hora de estadis no Estacionamento:");
+Console.WriteLine("Digite o preço por hora de estadia no Estacionamento:");
 precoPorHora = Convert.ToDecimal(Console.ReadLine());
 
 // Instancia a classe Estacionamento, já com os valores obtidos anteriormente
